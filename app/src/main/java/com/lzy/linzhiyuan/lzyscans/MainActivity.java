@@ -49,7 +49,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
-    private String lid;
+    private String tda;
     private Button btnBack;
     private Button btnSave,btndele;
     private EditText editbarcode,editmark,editfile;
