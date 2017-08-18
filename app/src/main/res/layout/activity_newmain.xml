@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="分隔符:"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                />
+
+
+            <EditText
+                android:id="@+id/et_mark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.43"
+                android:singleLine="true"
+                android:ems="12"
+                android:textSize="15dp"
+
+
+                />
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1.56"
+                android:textSize="15dp"
+                android:background="@drawable/img_bg_spinner"
+                android:id="@+id/spn_fwf"
+                />
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_back2"
+                android:layout_width="50dp"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:layout_weight="0.63">
+                <ImageView
+                    android:id="@+id/img_deleback"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/g15"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/btn_chosses"
+                    android:layout_width="58dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="全选"
+                    android:background="@color/blackTransparent1"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="40dp"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_save"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/floder4"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_back3"
+                android:layout_width="40dp"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_exit"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/g10"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_back4"
+                android:layout_width="40dp"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_delete"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/g4"/>
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_menu"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:background="#541B85"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:src="@mipmap/menu"-->
+                    <!--android:id="@+id/imageView2" />-->
+            <!--</LinearLayout>-->
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_weight="3"
+                android:textSize="15dp"
+                android:background="@drawable/img_bg_spinner"
+                android:id="@+id/spn_fwf111"
+                android:visibility="gone"
+
+                />
+
+            <!--<EditText-->
+                <!--android:id="@+id/editmark"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="请输入分隔符"-->
+                <!--android:layout_weight="1"-->
+                <!--/>-->
+
+
+            <!--<EditText-->
+                <!--android:id="@+id/editfile"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="请输入文件名"-->
+                <!--android:layout_weight="1"-->
+                <!--/>-->
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_sex"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+
+                android:hint="请输入条码的长度"
+                android:layout_weight="0.04"
+                android:singleLine="true"
+
+                android:textSize="15dp"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editbarcode"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:hint="请扫描条码"
+                android:layout_weight="1"
+                android:singleLine="true"
+
+                android:textSize="15dp"
+
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/deepskyblue"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <!--<TextView-->
+                <!--android:id="@+id/list_tvName"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="序号"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16dp"-->
+                <!--/>-->
+
+            <TextView
+                android:id="@+id/list_tvCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="条码"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/list_tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="选择"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="16dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/deepskyblue"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1">
+
+        <ListView
+
+            android:id="@+id/list1"
+            style="@style/List"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:listSelector="@drawable/clickstyle_listview" />
+
+    </LinearLayout>
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--&gt;-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnBack"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/buttonclickstyle2"-->
+                <!--android:text="退出[ESC]"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="16dp"-->
+
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btndele"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16dp"-->
+                <!--android:text="清除"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:background="@drawable/buttonclickstyle2"-->
+
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnSave"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="45dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="16dp"-->
+                <!--android:text="保存[ENT]"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:background="@drawable/buttonclickstyle2"-->
+
+                <!--/>-->
+        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二维码录入数"
+                />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                />
+
+            <TextView
+                android:id="@+id/tv_onenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一维码录入数"
+                android:layout_gravity="right"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

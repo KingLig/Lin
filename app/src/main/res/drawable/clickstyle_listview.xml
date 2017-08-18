@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 非触摸模式下获得焦点并单击时的背景图片 -->
+    <item android:state_focused="true" android:state_pressed="true"  android:drawable= "@color/color2" />
+    <!-- 触摸模式下单击时的背景图片-->
+    <item android:state_focused="false" android:state_pressed="true"  android:drawable="@color/color2" />
+
+    <!--选中时的图片背景--> <!--2015.12.10 没有效果，暂时保留-->
+    <item android:state_selected="true"  android:drawable="@color/green" />
+
+    <!--获得焦点时的图片背景--> <!--2015.12.10 上下方向键选择，选中时的背景图片-->
+    <item android:state_focused="true"  android:drawable="@color/green" />
+
+    <!-- 默认颜色 --> <!--2015.12.10 触摸点击时，选中时的背景图片-->
+    <item android:drawable="@color/green" />
+
+</selector>
