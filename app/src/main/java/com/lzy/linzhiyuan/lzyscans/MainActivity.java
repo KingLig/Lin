@@ -49,6 +49,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    private String lid;
     private Button btnBack;
     private Button btnSave,btndele;
     private EditText editbarcode,editmark,editfile;
@@ -102,7 +103,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         myAdapter = new MyAdapter(MainActivity.this);
         mListView.setAdapter(myAdapter);
 
-
+//
 
         //给CheckBox设置事件监听
         ch_box.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
