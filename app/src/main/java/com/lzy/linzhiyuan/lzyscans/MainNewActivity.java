@@ -27,6 +27,8 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,6 +58,7 @@ import java.util.regex.Pattern;
 
 public class MainNewActivity extends Activity implements AdapterView.OnItemClickListener,View.OnClickListener {
 
+    private String Te;
    private ImageView img_save;
     private ImageView img_deleback;
     private ImageView img_exit;
@@ -70,7 +73,8 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
     private static Stack<Activity> activityStack;
     MainNewActivity.Receiver receiver;
     private Button btn_chosses;
-
+    RadioButton san_two,san_one;
+    private RadioGroup rdg;
 
     private TextView tv_number,tv_onenumber;
     ListCodeAdapter myAdapternew=null;
@@ -110,6 +114,9 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
         btn_chosses=(Button) findViewById(R.id.btn_chosses) ;
         tv_number=(TextView)findViewById(R.id.tv_number);
         tv_onenumber=(TextView)findViewById(R.id.tv_onenumber) ;
+        san_one=(RadioButton)findViewById(R.id.san_one);
+        san_two=(RadioButton)findViewById(R.id.san_two);
+        rdg=(RadioGroup)findViewById(R.id.radiogroup1);
         mPackAdapter_fwfs = new SpinnerAdapter<String>(this, R.layout.spinner_item, Constants.SERVICES);
         spn_fwfs.setAdapter(mPackAdapter_fwfs);
         spn_fwfs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -136,6 +143,7 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
         SoundVibratorManager.initSounds(this);
         SoundVibratorManager.addSound(2, R.raw.errorflag);
         SoundVibratorManager.addSound(1, R.raw.scan);
+        san_two.setChecked(true);
         /************************列表初始化start*********************/
 //        mListView.setChoiceMode(mListView.CHOICE_MODE_SINGLE);
 
@@ -152,6 +160,21 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
 
     }
 
+
+    private RadioGroup.OnCheckedChangeListener rdgcc=new RadioGroup.OnCheckedChangeListener() {
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            // TODO Auto-generated method stub
+            if(checkedId==san_two.getId()){
+
+
+            }else if(checkedId==san_one.getId()){
+
+
+            }
+        }
+    };
 
     private void Test(){
 
@@ -280,21 +303,41 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
 
             editbarcode.setText(barcode);
 
-           int getindest= FindListBox(barcode);
-            if(getindest==1){
+            if(san_two.isChecked()) {
 
+                int getindest = FindListBox(barcode);
+                if (getindest == 1) {
 
-
-                if(onechcode) {
                     scanNumber++;
                     tv_number.setText("二维码录入数：" + Integer.toString(scanNumber));
-                }else {
+
+//                    if (onechcode) {
+//                        scanNumber++;
+//                        tv_number.setText("二维码录入数：" + Integer.toString(scanNumber));
+//                    } else {
+//
+//                        scnaoneNumber++;
+//                        tv_onenumber.setText("一维码录入数：" + Integer.toString(scnaoneNumber));
+//                    }
+
+
+                }else{
+                    SoundVibratorManager.playSound(2, 1);//失败提示音
+                    Toast.makeText(MainNewActivity.this, "请选择一维码扫描", Toast.LENGTH_LONG).show();
+
+
+                }
+            }else{
+
+                int snaone=FindOneBarcode(barcode);
+                if(snaone==1){
 
                     scnaoneNumber++;
                     tv_onenumber.setText("一维码录入数：" + Integer.toString(scnaoneNumber));
+                }else{
+                    SoundVibratorManager.playSound(2, 1);//失败提示音
+                    Toast.makeText(MainNewActivity.this, "请选择二维码扫描", Toast.LENGTH_LONG).show();
                 }
-
-
 
             }
 
@@ -306,24 +349,63 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP){
-            String scanText= editbarcode.getText().toString();
+        if(keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_UP) {
+            String scanText = editbarcode.getText().toString();
 
-            int getindest= FindListBox(scanText);
-            if(getindest==1){
 
-                if(onechcode) {
+            if (san_two.isChecked()) {
+
+                int getindest = FindListBox(scanText);
+                if (getindest == 1) {
+
                     scanNumber++;
                     tv_number.setText("二维码录入数：" + Integer.toString(scanNumber));
-                }else {
+
+//                    if (onechcode) {
+//                        scanNumber++;
+//                        tv_number.setText("二维码录入数：" + Integer.toString(scanNumber));
+//                    } else {
+//
+//                        scnaoneNumber++;
+//                        tv_onenumber.setText("一维码录入数：" + Integer.toString(scnaoneNumber));
+//                    }
+
+
+                } else {
+                    SoundVibratorManager.playSound(2, 1);//失败提示音
+                    Toast.makeText(MainNewActivity.this, "请选择一维码录入", Toast.LENGTH_LONG).show();
+
+
+                }
+            } else {
+
+                int snaone = FindOneBarcode(scanText);
+                if (snaone == 1) {
 
                     scnaoneNumber++;
                     tv_onenumber.setText("一维码录入数：" + Integer.toString(scnaoneNumber));
+                } else {
+                    SoundVibratorManager.playSound(2, 1);//失败提示音
+                    Toast.makeText(MainNewActivity.this, "请选择二维码录入", Toast.LENGTH_LONG).show();
                 }
 
             }
-
         }
+//            int getindest= FindListBox(scanText);
+//            if(getindest==1){
+//
+//                if(onechcode) {
+//                    scanNumber++;
+//                    tv_number.setText("二维码录入数：" + Integer.toString(scanNumber));
+//                }else {
+//
+//                    scnaoneNumber++;
+//                    tv_onenumber.setText("一维码录入数：" + Integer.toString(scnaoneNumber));
+//                }
+//
+//            }
+//
+//        }
         if (keyCode == 4) {
 
 
@@ -680,13 +762,13 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
                         } else {
 
                             if(barcode.length()<30){
-                                values.put("barcode", barcode);
-                                // 插入数据
-                                helper.insert(values);
-                                onechcode=false;
-                                refreshData(barcode);
-                                SoundVibratorManager.playSound(1, 1);//成功提示音
-                                return 1;
+//                                values.put("barcode", barcode);
+//                                // 插入数据
+//                                helper.insert(values);
+//                                onechcode=false;
+//                                refreshData(barcode);
+//                                SoundVibratorManager.playSound(1, 1);//成功提示音
+                                return -1;
 
                             }else{
 
@@ -785,13 +867,13 @@ public class MainNewActivity extends Activity implements AdapterView.OnItemClick
 
 
                         if(barcode.length()<30){
-                            values.put("barcode", barcode);
-                            // 插入数据
-                            helper.insert(values);
-                            refreshData(barcode);
-                            onechcode=false;
-                            SoundVibratorManager.playSound(1, 1);//成功提示音
-                            return 1;
+//                            values.put("barcode", barcode);
+//                            // 插入数据
+//                            helper.insert(values);
+//                            refreshData(barcode);
+//                            onechcode=false;
+//                            SoundVibratorManager.playSound(1, 1);//成功提示音
+                            return -1;
 
                         }else{
 
